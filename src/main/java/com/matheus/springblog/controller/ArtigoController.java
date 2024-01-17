@@ -30,6 +30,11 @@ public class ArtigoController {
         return artigoService.criar(artigo);
     }
 
+    @PutMapping
+    public Artigo atualizar(@RequestBody Artigo artigo) {
+        return artigoService.criar(artigo);
+    }
+
     @GetMapping("/data-gt")
     public List<Artigo> findByDataGreaterThan(@RequestParam("data") LocalDateTime data) {
         return artigoService.findByDataGreaterThan(data);
