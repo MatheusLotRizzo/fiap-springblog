@@ -44,4 +44,13 @@ public class ArtigoController {
     public List<Artigo> findByDataAndStatus(@RequestParam("data") LocalDateTime data, @RequestParam("status") Integer status) {
         return artigoService.findByDataAndStatus(data, status);
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable String id) {
+        artigoService.deleteById(id);
+    }
+    @GetMapping("/data-status-gt")
+    public List<Artigo> findByStatusAndDataGreaterThan(@RequestParam("status") Integer status, @RequestParam("data") LocalDateTime data) {
+        return artigoService.findByStatusAndDataGreaterThan(status, data);
+    }
 }
